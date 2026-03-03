@@ -1,14 +1,14 @@
 import { ResearchPlan, ResearchTask, ResearchContext, SSEEvent, Insight } from '@/types'
 import { buildContext } from '@/lib/engine/skill-runtime'
 import webSearch from '@/lib/skills/web-search'
-import webScraper from '@/lib/skills/web-scraper'
+import httpScraper from '@/lib/skills/http-scraper'
 import keyExtractor from '@/lib/skills/key-extractor'
 import reportGenerator from '@/lib/skills/report-generator'
 import matrixBuilder from '@/lib/skills/matrix-builder'
 
 const SKILL_MAP: Record<string, { execute: (inputs: Record<string, unknown>, ctx: ReturnType<typeof buildContext>) => Promise<unknown> }> = {
   'web-search': webSearch,
-  'web-scraper': webScraper,
+  'web-scraper': httpScraper,
   'key-extractor': keyExtractor,
   'report-generator': reportGenerator,
   'matrix-builder': matrixBuilder,

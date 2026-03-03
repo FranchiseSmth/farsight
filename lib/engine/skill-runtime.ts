@@ -1,4 +1,3 @@
-import { chromium } from 'playwright'
 import { Readability } from '@mozilla/readability'
 import { JSDOM } from 'jsdom'
 import { Document, SearchResult } from '@/types'
@@ -57,32 +56,35 @@ export function buildContext(onLog?: (level: string, msg: string) => void): Skil
     },
 
     async fetch(url) {
-      const browser = await chromium.launch({ headless: true })
-      const context = await browser.newContext({
-        userAgent:
-          'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-        locale: 'zh-CN',
-      })
-      const page = await context.newPage()
+      const ctrl = new AbortController()
+      const timer = setTimeout(() => ctrl.abort(), 12000)
       try {
-        await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 20000 })
-        await page.waitForTimeout(1500)
-        const html = await page.content()
-        const title = await page.title()
-        const dom = new JSDOM(html, { url })
-        const reader = new Readability(dom.window.document)
+        const res = await fetch(url, {
+          signal: ctrl.signal,
+          redirect: 'follow',
+          headers: {
+            'User-Agent':
+              'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+            Accept: 'text/html,application/xhtml+xml,*/*;q=0.8',
+            'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
+          },
+        })
+        if (!res.ok) throw new Error(`HTTP ${res.status}`)
+        const html = await res.text()
+        const dom = new JSDOM(html, { url: res.url })
+        const clone = dom.window.document.cloneNode(true) as typeof dom.window.document
+        const reader = new Readability(clone)
         const article = reader.parse()
         const content = (article?.textContent ?? '').replace(/\s+/g, ' ').trim()
         return {
-          url,
-          title: article?.title || title || url,
+          url: res.url,
+          title: article?.title || dom.window.document.title || url,
           content,
           metadata: { siteName: article?.siteName ?? '', byline: article?.byline ?? '' },
           word_count: content.split(/\s+/).filter(Boolean).length,
         } as Document
       } finally {
-        await context.close()
-        await browser.close()
+        clearTimeout(timer)
       }
     },
 
