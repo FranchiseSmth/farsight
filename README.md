@@ -51,7 +51,7 @@ lib/
 **环境要求：** Node.js 20+、pnpm
 
 ```bash
-git clone https://github.com/your-org/farsight
+git clone https://github.com/finvfamily/farsight
 cd farsight
 pnpm install
 pnpm playwright install chromium   # 安装爬虫内核

@@ -827,7 +827,7 @@ function buildMarkdown(report: Report, query: string): string {
   }
 
   const ts = new Date(report.generated_at).toLocaleString('zh-CN')
-  lines.push(`*由 [Farsight](https://github.com/your-org/farsight) 生成 · ${ts}*`)
+  lines.push(`*由 [Farsight](https://github.com/finvfamily/farsight) 生成 · ${ts}*`)
 
   return lines.join('\n')
 }
