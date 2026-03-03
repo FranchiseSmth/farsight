@@ -2,7 +2,7 @@
 
 > **AI Research for Founders** — 专为创业者打造的 AI 深度调研工具。输入一个问题，自动完成搜索 → 抓取 → 分析 → 报告全流程。
 
-[English](./README.en.md) · 中文
+中文 · [English](./README.en.md)
 
 ---
 
